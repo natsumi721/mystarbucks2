@@ -125,7 +125,7 @@ drinks = [
   {
     name: "ほうじ茶&クラシックティーラテ（アイス）",
     price: "S:510 T:550 G:595",
-    category: "ホット",
+    category: "アイス",
     image: "https://asset.menu.starbucks.co.jp/public/sku_images/4524785557185/4524785557185_1_m.jpg"
   },
   {
