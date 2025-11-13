@@ -1,2 +1,8 @@
 <h1>Drinks#show</h1>
 <p>Find me in app/views/drinks/show.html.erb</p>
+<div class="drink-detail">
+  <h1><%= @drink.name %></h1>
+  <p><%= @drink.price %></p>
+  <p><%= @drink.category %></p>
+  <%= link_to "戻る", root_path %>
+</div>
