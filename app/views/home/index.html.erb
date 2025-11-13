@@ -1,2 +1,35 @@
-<h1>My staebucks</h1>
+<div class="random-selector">
+ <div class="header">
+<h1>My starbucks</h1>
 <p>〜たまには冒険もいかが？〜</p>
+</div>
+
+<div class="temperature-buttons">
+    <div class="button-container">
+      <%= link_to random_drinks_path(temperature: "ice"), 
+                  method: :get, 
+                  class: "temp-button ice-button" do %>
+        <div class="button-icon">🧊</div>
+        <div class="button-text">
+          <h2>Ice</h2>
+        </div>
+      <% end %>
+    </div>
+    
+    <div class="button-container">
+      <%= link_to random_drinks_path(temperature: "hot"), 
+                  method: :get, 
+                  class: "temp-button hot-button" do %>
+        <div class="button-icon">☕</div>
+        <div class="button-text">
+          <h2>Hot</h2>
+
+        </div>
+      <% end %>
+    </div>
+  </div>
+  
+  <div class="description">
+    <p>ボタンを押すと、ドリンクをランダムで選びます！</p>
+  </div>
+</div>

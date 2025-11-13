@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+
   root 'home#index'
   get "home/index"
+  get 'drinks/random', to: 'drinks#random', as: 'random_drinks'  # ランダム結果
+  resources :drinks   # 個別詳細（将来的に使う場合）
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -13,4 +17,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+
+
 end

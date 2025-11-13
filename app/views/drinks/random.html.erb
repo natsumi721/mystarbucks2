@@ -1,0 +1,54 @@
+<div class="random-result">
+  <div class="result-header">
+    <h1>☕️ This is the drink I chose for you ☕️</h1>
+    <p class="selected-type">
+      <% if @temperature_type == "ice" %>
+     
+      <% else %>
+  
+      <% end %>
+    </p>
+  </div>
+  
+  <% if @selected_drink %>
+    <div class="selected-drink">
+      <div class="drink-image-container">
+        <% if @selected_drink.image.present? %>
+          <%= image_tag @selected_drink.image, 
+                        alt: @selected_drink.name, 
+                        class: "selected-drink-image" %>
+        <% else %>
+          <div class="no-image">
+            <span class="drink-emoji">☕</span>
+          </div>
+        <% end %>
+      </div>
+      
+      <div class="drink-info">
+        <h2><%= @selected_drink.name %></h2>
+        <p class="price"><%= @selected_drink.price %></p>
+        <p class="category"><%= @selected_drink.category %></p>
+        
+        <div class="fortune-message">
+          <p>🌱 今日もお疲れ様 🌱</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="action-buttons">
+      <%= link_to "もう一度選ぶ", root_path, class: "btn btn-primary" %>
+      <% if @temperature_type == "ice" %>
+        <%= link_to "ホットも試す", random_drinks_path(temperature: "hot"), 
+                    class: "btn btn-secondary" %>
+      <% else %>
+        <%= link_to "アイスも試す", random_drinks_path(temperature: "ice"), 
+                    class: "btn btn-secondary" %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="no-result">
+      <p>申し訳ございません。該当するドリンクが見つかりませんでした。</p>
+      <%= link_to "戻る", root_path, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
